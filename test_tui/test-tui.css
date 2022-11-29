@@ -1,0 +1,59 @@
+Screen {
+    layers: zero one two;
+}
+
+Footer {
+    layer: two;
+}
+
+
+
+#control-panel {
+    width: 100%;
+    height: 5;
+    padding: 1;
+    background: $boost;
+
+}
+
+#app-grid {
+    /*
+    FIXME: Fix height to 85% because the fixed height control-panel container leads to an overflow,
+    might be related to https://github.com/Textualize/textual/issues/1036
+    */
+    height: 85%;
+}
+
+#left-pane>Static {
+    background: $boost;
+    color: auto;
+    /* margin-bottom: 1; */
+    /* padding: 1; */
+}
+
+#left-pane {
+    width: 40%;
+    border: dodgerblue;
+}
+
+#test-output-pane {
+    background: $panel;
+    border: mediumvioletred;
+}
+
+#test-output-pane>Static {
+    background: $boost;
+}
+
+#app-output {
+    dock: bottom;
+    height: 10;
+    layer: one;
+    background: $panel;
+    border: greenyellow;
+    margin-bottom: 1;
+}
+
+#app-output.hidden {
+    display: none;
+}
