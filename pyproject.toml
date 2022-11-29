@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "test-tui"
+description = "An interactive test runner TUI"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+keywords = ["scraper"]
+authors = [
+  {name = "Jonas Ehrlich"}, {email = "jonas.ehrlich@gmail.com"},
+]
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "textual >= 0.2.0",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+  "textual[dev]",
+  "pytest",
+  "black==22.6.0",
+  "pre-commit",
+]
+
+[project.urls]
+homepage = "https://github.com/jonasehrlich/test-tui"
+repository = "https://github.com/jonasehrlich/test-tui"
+
+# [project.scripts]
+# ek-scraper = "test_tui.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["test_tui*"]
+
+[tool.setuptools_scm]
+
+# [tool.setuptools.dynamic]
+# version = {attr = "test_tui.__version__"}
+
+[tool.black]
+line-length = 120
